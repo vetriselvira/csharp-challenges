@@ -13,21 +13,25 @@ namespace csharp_challenges
         [Test]
         public void Run()
         {
-            var v = Factorial(5);
-            Assert.AreEqual(15, v);
+            int F = Factorial(5);     
+            Assert.AreEqual(120, F);
+
+            Assert.AreNotEqual(0, Factorial(0));
+
+            Assert.AreEqual(1, Factorial(1));
+
+           
         }
 
 
         int Factorial(int n)
         {
-
-            int result = 0;
-            for (int i = n; i >= 0; i--)
+            int result = 1;
+            for (int i = n; i > 0; i--)
             {
-                result = result + i;
+                result = result * i;
             }
             return result;
-
         }
     }
 }
