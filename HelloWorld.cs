@@ -6,9 +6,9 @@ namespace csharp_challenges
     {
         
         [Test]
-        public void Run()
+        public void TestMethod()
         {
-            
+            Assert.AreEqual(1, 1);
         }
 
 
