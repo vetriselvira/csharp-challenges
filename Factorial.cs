@@ -13,18 +13,15 @@ namespace csharp_challenges
         [Test]
         public void Run()
         {
-            int F = Factorial(5);     
-            Assert.AreEqual(120, F);
+            int F_For = FactorialFor(5);
+            int F_re = FactorialRecursive(5);
+            Assert.AreEqual(120, F_re);
+            Assert.AreEqual(120, F_For);
 
-            Assert.AreNotEqual(0, Factorial(0));
-
-            Assert.AreEqual(1, Factorial(1));
-
-           
         }
 
 
-        int Factorial(int n)
+        int FactorialFor(int n)
         {
             int result = 1;
             for (int i = n; i > 0; i--)
@@ -32,6 +29,19 @@ namespace csharp_challenges
                 result = result * i;
             }
             return result;
+        }
+
+
+       int  FactorialRecursive(int n)
+        {
+            if(n <= 0)
+            {
+                return 1;
+            } else
+            {
+                return n * FactorialRecursive(n - 1);
+            }
+
         }
     }
 }
