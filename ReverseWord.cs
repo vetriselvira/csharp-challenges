@@ -14,12 +14,13 @@ namespace csharp_challenges
         {
             string str = "My end";
             var ReturnStr = Reverse(str);
-            List<string> lst= new List<string>() { "yM","dne"};
+            string lst="yM dne";
             Assert.AreEqual(lst, ReturnStr);
         }
-        List<string> Reverse(string str)
+        string Reverse(string str)
         {
             string ReturnStr = string.Empty;
+            string final = string.Empty;
             List<string> lst = new List<string>();
             for (int i = 0; i < str.Length; i++)
             {
@@ -36,8 +37,18 @@ namespace csharp_challenges
                 
 
             }
-
-            return lst;
+            lst.Add(ReturnStr);
+            lst.ToArray();
+          foreach(var word in lst)
+            {
+                final = final  + word +" ";
+                
+                
+            }
+           final =  final.Substring(0, str.Length);
+            
+            return final;
         }
+
     }
 }
